@@ -30,7 +30,6 @@ customer:
       required:
         - accountType
       
-
 info:
   id: info
   type: object
