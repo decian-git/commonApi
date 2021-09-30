@@ -8,7 +8,7 @@ account:
         address:
           type: string
         info:
-          $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/info.yaml#/info'
+          $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/info'
       required:
       - name
       - accountType
