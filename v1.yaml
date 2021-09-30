@@ -1,21 +1,33 @@
 account:
-      type: object
-      properties:
-        name:
-          type: string
-        accountType:
-          type: string
-        address:
-          type: string
-        info:
-          $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/info.yaml'
-      required:
-      - name
-      - accountType
+  type: object
+  discriminator: accountType
+  properties:
+    name:
+      type: string
+    accountType:
+      type: string
+    address:
+      type: string
+    info:
+      $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/info'
+  required:
+  - name
+  - accountType
 
-info:
-      type: object
-      properties:
-        sentAt:
+customer:
+  description: Extended account that is a representation of a customer
+  allOf: 
+    - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/account'
+    - type: object
+      properties: 
+        activationDate: 
           type: string
           format: date-time
+      
+
+info:
+  type: object
+  properties:
+    sentAt:
+      type: string
+      format: date-time
