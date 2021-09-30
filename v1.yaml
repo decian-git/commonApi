@@ -23,6 +23,10 @@ customer:
         activationDate: 
           type: string
           format: date-time
+        accountType:
+          const: customer
+      required:
+        - accountType
       
 
 info:
