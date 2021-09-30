@@ -1,0 +1,6 @@
+    info:
+      type: object
+      properties:
+        sentAt:
+          type: string
+          format: date-time

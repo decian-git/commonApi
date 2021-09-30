@@ -5,6 +5,8 @@ account:
           type: string
         accountType:
           type: string
+        info:
+          $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/info.yaml'
       required:
       - name
       - accountType
