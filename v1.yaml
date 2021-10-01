@@ -15,6 +15,59 @@ account:
   - name
   - accountType
 
+accounts:
+  allOf:
+    -$ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+  id: accounts
+  type: object
+  properties:
+    name:
+      type: string
+    website:
+      type: string
+
+baseModel:
+  allOf:
+    -$ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+  id: baseModel
+  type: object
+  properties:
+    id:
+      type: string
+    modified_user_id:
+      type: string
+    modified_by_name:
+      type: string
+    assigned_user_id:
+      type: string
+    assigned_user_name:
+      type: string
+    date_modified:
+      type: date-time
+    date_entered:
+      type: string
+    created_by:
+      type: string
+    created_by_name:
+      type: string
+
+contact:
+  allOf:
+    -$ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+  id: contact
+  type: object
+  properties:
+    email:
+      type: string
+      format: email
+    first_name:
+      type: string
+    last_name:
+      type: string
+    salutation:
+      type: string
+    
+    
 customer:
   id: customer
   description: Extended account that is a representation of a customer
