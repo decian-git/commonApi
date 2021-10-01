@@ -27,11 +27,13 @@ accounts:
       type: string
 
 baseModel:
-  allOf:
-    -$ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+  discriminator:
+    baseModelType
   id: baseModel
   type: object
   properties:
+    baseModelType:
+      type: string
     id:
       type: string
     modified_user_id:
@@ -51,21 +53,21 @@ baseModel:
     created_by_name:
       type: string
 
-contact:
-  allOf:
-    -$ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
-  id: contact
-  type: object
-  properties:
-    email:
-      type: string
-      format: email
-    first_name:
-      type: string
-    last_name:
-      type: string
-    salutation:
-      type: string
+# contact:
+#   allOf:
+#     -$ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+#   id: contact
+#   type: object
+#   properties:
+#     email:
+#       type: string
+#       format: email
+#     first_name:
+#       type: string
+#     last_name:
+#       type: string
+#     salutation:
+#       type: string
     
     
 customer:
