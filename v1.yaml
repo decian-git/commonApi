@@ -19,17 +19,16 @@ customer:
   id: customer
   description: Extended account that is a representation of a customer
   allOf: 
-    # - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/account'
-    - $ref: '#account'
-    - type: object
-      properties: 
-        activationDate: 
-          type: string
-          format: date-time
-        accountType:
-          const: customer
-      required:
-        - accountType
+    - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/account'
+  type: object
+  properties: 
+    activationDate: 
+      type: string
+      format: date-time
+    accountType:
+      const: customer
+  required:
+      - accountType
       
 info:
   id: info
