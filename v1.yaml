@@ -17,7 +17,7 @@ account:
 
 accounts:
   allOf:
-    -$ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+    - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
   id: accounts
   type: object
   properties:
@@ -56,7 +56,7 @@ baseModel:
 
 contact:
   allOf:
-    -$ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+    - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
   id: contact
   type: object
   properties:
