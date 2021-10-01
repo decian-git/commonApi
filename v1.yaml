@@ -45,7 +45,8 @@ baseModel:
     assigned_user_name:
       type: string
     date_modified:
-      type: date-time
+      type: string
+      format: date-time
     date_entered:
       type: string
     created_by:
@@ -53,21 +54,21 @@ baseModel:
     created_by_name:
       type: string
 
-# contact:
-#   allOf:
-#     -$ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
-#   id: contact
-#   type: object
-#   properties:
-#     email:
-#       type: string
-#       format: email
-#     first_name:
-#       type: string
-#     last_name:
-#       type: string
-#     salutation:
-#       type: string
+contact:
+  allOf:
+    -$ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+  id: contact
+  type: object
+  properties:
+    email:
+      type: string
+      format: email
+    first_name:
+      type: string
+    last_name:
+      type: string
+    salutation:
+      type: string
     
     
 customer:
