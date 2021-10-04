@@ -1,20 +1,6 @@
-accounts:
-  allOf:
-    - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
-  id: accounts
-  type: object
-  properties:
-    name:
-      type: string
-    website:
-      type: string
-    baseModelType:
-      const: accounts
-
 baseModel:
   discriminator:
     baseModelType
-  id: baseModel
   type: object
   properties:
     baseModelType:
@@ -41,10 +27,19 @@ baseModel:
   required:
     - baseModelType
 
+accounts:
+  allOf:
+  - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+  type: object
+  properties:
+    name:
+      type: string
+    website:
+      type: string
+      
 contact:
   allOf:
-    - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
-  id: contact
+  - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
   type: object
   properties:
     email:
@@ -56,8 +51,6 @@ contact:
       type: string
     salutation:
       type: string
-    baseModelType:
-      const: contact
 
 
   # account:
