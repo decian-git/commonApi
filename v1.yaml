@@ -28,7 +28,7 @@ baseModel:
     - baseModelType
 
 accounts:
-  allOf:
+  oneOf:
   - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
   type: object
   properties:
@@ -36,7 +36,7 @@ accounts:
       type: string
     website:
       type: string
-      
+
 contact:
   allOf:
   - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
