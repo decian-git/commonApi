@@ -1,75 +1,75 @@
-account:
-  id: account
+accounts:
+  allOf:
+    - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+  id: accounts
   type: object
-  discriminator: accountType
   properties:
     name:
       type: string
-    accountType:
+    website:
       type: string
-    address:
+
+baseModel:
+  discriminator:
+    baseModelType
+  id: baseModel
+  type: object
+  properties:
+    baseModelType:
       type: string
-    info:
-      $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/info'
-  required:
-  - name
-  - accountType
+    id:
+      type: string
+    modified_user_id:
+      type: string
+    modified_by_name:
+      type: string
+    assigned_user_id:
+      type: string
+    assigned_user_name:
+      type: string
+    date_modified:
+      type: string
+      format: date-time
+    date_entered:
+      type: string
+    created_by:
+      type: string
+    created_by_name:
+      type: string
 
-# accounts:
-#   allOf:
-#     - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
-#   id: accounts
-#   type: object
-#   properties:
-#     name:
-#       type: string
-#     website:
-#       type: string
+contact:
+  allOf:
+    - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+  id: contact
+  type: object
+  properties:
+    email:
+      type: string
+      format: email
+    first_name:
+      type: string
+    last_name:
+      type: string
+    salutation:
+      type: string
 
-# baseModel:
-#   discriminator:
-#     baseModelType
-#   id: baseModel
-#   type: object
-#   properties:
-#     baseModelType:
-#       type: string
-#     id:
-#       type: string
-#     modified_user_id:
-#       type: string
-#     modified_by_name:
-#       type: string
-#     assigned_user_id:
-#       type: string
-#     assigned_user_name:
-#       type: string
-#     date_modified:
-#       type: string
-#       format: date-time
-#     date_entered:
-#       type: string
-#     created_by:
-#       type: string
-#     created_by_name:
-#       type: string
 
-# contact:
-#   allOf:
-#     - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
-#   id: contact
-#   type: object
-#   properties:
-#     email:
-#       type: string
-#       format: email
-#     first_name:
-#       type: string
-#     last_name:
-#       type: string
-#     salutation:
-#       type: string
-    
+  # account:
+  # id: account
+  # type: object
+  # discriminator: accountType
+  # properties:
+  #   name:
+  #     type: string
+  #   accountType:
+  #     type: string
+  #   address:
+  #     type: string
+  #   info:
+  #     $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/info'
+  # required:
+  # - name
+  # - accountType  
     
 # customer:
 #   id: customer
