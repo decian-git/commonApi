@@ -8,6 +8,8 @@ accounts:
       type: string
     website:
       type: string
+    baseModelType:
+      const: accounts
 
 baseModel:
   discriminator:
@@ -36,6 +38,8 @@ baseModel:
       type: string
     created_by_name:
       type: string
+  required:
+    baseModelType
 
 contact:
   allOf:
