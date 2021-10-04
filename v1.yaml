@@ -39,7 +39,7 @@ baseModel:
     created_by_name:
       type: string
   required:
-    baseModelType
+    - baseModelType
 
 contact:
   allOf:
