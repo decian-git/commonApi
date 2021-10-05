@@ -1,94 +1,89 @@
-baseModel:
-  discriminator:
-    baseModelType
-  type: object
-  properties:
-    baseModelType:
-      type: string
-    id:
-      type: string
-    modified_user_id:
-      type: string
-    modified_by_name:
-      type: string
-    assigned_user_id:
-      type: string
-    assigned_user_name:
-      type: string
-    date_modified:
-      type: string
-      format: date-time
-    date_entered:
-      type: string
-    created_by:
-      type: string
-    created_by_name:
-      type: string
-  required:
-    - baseModelType
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: DecianX API
+  description: Welcome to the decianx api. This API allows you to use shared data models, for internal applications.
+servers:
+  - url: https://someserver.decianx.com/api/v1
+  
+paths:
+  /sample:
+    summary: Accounts of this application
+    description: Accounts's of decianx
+    get:
+      description: sample
+      operationId: sample
+      parameters:
+      - name: id
+        in: query
+        description: Return only companies matching this ```id``` value
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sample: 
+                    type: string
 
-accounts:
-  oneOf:
-  - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
-  type: object
-  properties:
-    name:
-      type: string
-    website:
-      type: string
+components:
+  schemas:
+    baseModel:
+      discriminator:
+        type: discriminator
+        propertyName: baseModelType
+      type: object
+      properties:
+        baseModelType:
+          type: string
+        id:
+          type: string
+        modified_user_id:
+          type: string
+        modified_by_name:
+          type: string
+        assigned_user_id:
+          type: string
+        assigned_user_name:
+          type: string
+        date_modified:
+          type: string
+          format: date-time
+        date_entered:
+          type: string
+        created_by:
+          type: string
+        created_by_name:
+          type: string
+      required:
+        - baseModelType
 
-contact:
-  allOf:
-  - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
-  type: object
-  properties:
-    email:
-      type: string
-      format: email
-    first_name:
-      type: string
-    last_name:
-      type: string
-    salutation:
-      type: string
+    accounts:
+      allOf:
+      - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+      type: object
+      properties:
+        name:
+          type: string
+        website:
+          type: string
 
-
-  # account:
-  # id: account
-  # type: object
-  # discriminator: accountType
-  # properties:
-  #   name:
-  #     type: string
-  #   accountType:
-  #     type: string
-  #   address:
-  #     type: string
-  #   info:
-  #     $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/info'
-  # required:
-  # - name
-  # - accountType  
-    
-# customer:
-#   id: customer
-#   description: Extended account that is a representation of a customer
-#   allOf: 
-#     - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/account'
-#   type: object
-#   properties: 
-#     activationDate: 
-#       type: string
-#       format: date-time
-#     accountType:
-#       const: customer
-#   required:
-#       - accountType
-      
-# info:
-#   id: info
-#   type: object
-#   properties:
-#     sentAt:
-#       type: string
-#       format: date-time
+    contact:
+      allOf:
+      - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        first_name:
+          type: string
+        last_name:
+          type: string
+        salutation:
+          type: string
