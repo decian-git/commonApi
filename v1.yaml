@@ -33,6 +33,10 @@ paths:
 
 components:
   schemas:
+    # $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/components/shcemas'
+
+    # baseModel:
+    #   $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
     baseModel:
       discriminator:
         type: discriminator
@@ -65,7 +69,7 @@ components:
 
     accounts:
       allOf:
-      - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+      - $ref: '#/components/schemas/baseModel'
       type: object
       properties:
         name:
@@ -75,7 +79,7 @@ components:
 
     contact:
       allOf:
-      - $ref: 'https://raw.githubusercontent.com/decian-git/commonApi/master/v1.yaml#/baseModel'
+      - $ref: '#/components/schemas/baseModel'
       type: object
       properties:
         email:
